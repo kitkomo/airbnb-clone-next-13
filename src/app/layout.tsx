@@ -2,6 +2,8 @@ import { Metadata } from 'next'
 import { Nunito } from 'next/font/google'
 import { FC, ReactNode } from 'react'
 
+import Navbar from '@/components/Navbar/Navbar'
+
 import '@/assets/styles/globals.css'
 
 export const metadata: Metadata = {
@@ -16,7 +18,10 @@ const font = Nunito({
 const layout: FC<{ children: ReactNode }> = ({ children }) => {
 	return (
 		<html lang="en">
-			<body className={font.className}>{children}</body>
+			<body className={font.className}>
+				<Navbar />
+				{children}
+			</body>
 		</html>
 	)
 }
