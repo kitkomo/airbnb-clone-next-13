@@ -5,6 +5,7 @@ import { ReactNode } from 'react'
 import Navbar from '@/components/Navbar/Navbar'
 import LoginModal from '@/components/modals/LoginModal'
 import RegisterModal from '@/components/modals/RegisterModal'
+import RentModal from '@/components/modals/RentModal'
 
 import '@/assets/styles/globals.css'
 
@@ -29,6 +30,7 @@ const layout = async ({ children }: { children: ReactNode }) => {
 				<ToasterProvider />
 				<LoginModal />
 				<RegisterModal />
+				<RentModal />
 				<Navbar currentUser={currentUser} />
 				{children}
 			</body>
