@@ -1,9 +1,8 @@
 'use client'
 
-import axios from 'axios'
 import { signIn } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
-import { FC, useState } from 'react'
+import { FC, useCallback, useState } from 'react'
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
 import { toast } from 'react-hot-toast'
 import { AiFillGithub } from 'react-icons/ai'
@@ -53,6 +52,11 @@ const LoginModal: FC = () => {
 		})
 	}
 
+	const toggle = useCallback(() => {
+		loginModal.onClose()
+		registerModal.onOpen()
+	}, [loginModal, registerModal])
+
 	const bodyContent = (
 		<div className="flex flex-col gap-4">
 			<Heading title="Welcome to back" subtitle="Log in to your account" />
@@ -93,12 +97,12 @@ const LoginModal: FC = () => {
 			/>
 			<div className="text-neutral-500 text-center mt-4 font-light">
 				<div className="flex gap-2 items-center justify-center">
-					<div>Already have an acoount?</div>
+					<div>First time using Airbnb?</div>
 					<div
-						onClick={loginModal.onClose}
+						onClick={toggle}
 						className="text-neutral-800 cursor-pointer hover:underline"
 					>
-						Log in
+						Create an account
 					</div>
 				</div>
 			</div>
