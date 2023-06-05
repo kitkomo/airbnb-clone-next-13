@@ -32,7 +32,7 @@ const layout = async ({ children }: { children: ReactNode }) => {
 				<RegisterModal />
 				<RentModal />
 				<Navbar currentUser={currentUser} />
-				{children}
+				<div className="pb-20 pt-28">{children}</div>
 			</body>
 		</html>
 	)
