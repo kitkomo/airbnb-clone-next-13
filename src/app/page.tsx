@@ -5,6 +5,8 @@ import ListingCard from '@/components/listings/ListingCard'
 import getCurrentUser from '@/actions/getCurrentUser'
 import getListings, { ListingsParams } from '@/actions/getListings'
 
+export const dynamic = 'force-dynamic'
+
 interface HomeProps {
 	searchParams: ListingsParams
 }

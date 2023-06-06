@@ -11,36 +11,51 @@ export interface ListingsParams {
 	category?: string
 }
 
-const getListings = async (params: ListingsParams) => {
+export default async function getListings(params: ListingsParams) {
 	try {
 		const {
 			userId,
-			category,
 			roomCount,
-			bathroomCount,
 			guestCount,
+			bathroomCount,
 			locationValue,
 			startDate,
-			endDate
+			endDate,
+			category
 		} = params
 
 		let query: any = {}
 
-		if (userId) query.userId = userId
-		if (category) query.category = category
-		if (roomCount)
+		if (userId) {
+			query.userId = userId
+		}
+
+		if (category) {
+			query.category = category
+		}
+
+		if (roomCount) {
 			query.roomCount = {
 				gte: +roomCount
 			}
-		if (bathroomCount)
-			query.bathroomCount = {
-				gte: +bathroomCount
-			}
-		if (guestCount)
+		}
+
+		if (guestCount) {
 			query.guestCount = {
 				gte: +guestCount
 			}
-		if (locationValue) query.locationValue = locationValue
+		}
+
+		if (bathroomCount) {
+			query.bathroomCount = {
+				gte: +bathroomCount
+			}
+		}
+
+		if (locationValue) {
+			query.locationValue = locationValue
+		}
+
 		if (startDate && endDate) {
 			query.NOT = {
 				reservations: {
@@ -72,5 +87,3 @@ const getListings = async (params: ListingsParams) => {
 		throw new Error(error)
 	}
 }
-
-export default getListings
