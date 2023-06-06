@@ -3,10 +3,14 @@ import EmptyState from '@/components/EmptyState'
 import ListingCard from '@/components/listings/ListingCard'
 
 import getCurrentUser from '@/actions/getCurrentUser'
-import getListings from '@/actions/getListings'
+import getListings, { ListingsParams } from '@/actions/getListings'
 
-const HomePage = async () => {
-	const listings = await getListings()
+interface HomeProps {
+	searchParams: ListingsParams
+}
+
+const HomePage = async ({ searchParams }: HomeProps) => {
+	const listings = await getListings(searchParams)
 	const currentUser = await getCurrentUser()
 
 	if (listings.length === 0) return <EmptyState showReset />
