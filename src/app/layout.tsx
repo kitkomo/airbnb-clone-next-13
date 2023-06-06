@@ -11,6 +11,7 @@ import '@/assets/styles/globals.css'
 
 import getCurrentUser from '@/actions/getCurrentUser'
 import ToasterProvider from '@/providers/ToasterProvider'
+import SearchModal from '@/components/modals/SearchModal'
 
 export const metadata: Metadata = {
 	title: 'Airbnb',
@@ -31,6 +32,7 @@ const layout = async ({ children }: { children: ReactNode }) => {
 				<LoginModal />
 				<RegisterModal />
 				<RentModal />
+				<SearchModal />
 				<Navbar currentUser={currentUser} />
 				<div className="pb-20 pt-28">{children}</div>
 			</body>

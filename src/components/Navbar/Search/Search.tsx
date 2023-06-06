@@ -3,9 +3,13 @@
 import { FC } from 'react'
 import { BiSearch } from 'react-icons/bi'
 
+import useSearchModal from '@/hooks/useSearchModal'
+
 const Search: FC = () => {
+	const searchModal = useSearchModal()
+
 	return (
-		<div className="border-[1px] md:auto py-2 rounded-full shadow-sm hover:shadow-md transition cursor-pointer">
+		<div onClick={searchModal.onOpen} className="border-[1px] md:auto py-2 rounded-full shadow-sm hover:shadow-md transition cursor-pointer">
 			<div className="flex flex-row items-center justify-between">
 				<div className="text-sm font-semibold px-6">Anywhere</div>
 				<div className="hidde sm:block text-sm font-semibold px-6 boder-x-[1px] flex-1 text-center">
