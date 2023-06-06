@@ -18,8 +18,8 @@ import Input from '../ui/Inputs/Input'
 import Modal from './Modal'
 
 const RegisterModal: FC = () => {
-	const registerModal = useRegisterModal()
 	const [isLoading, setIsLoading] = useState(false)
+	const registerModal = useRegisterModal()
 	const loginModal = useLoginModal()
 
 	const {
@@ -38,8 +38,12 @@ const RegisterModal: FC = () => {
 		setIsLoading(true)
 		axios
 			.post('/api/register', data)
-			.then(() => registerModal.onClose())
-			.catch(error => toast.error('Something went wrong'))
+			.then(() => {
+				toast.success('Successfully signed up! Now you can log in')
+				registerModal.onClose()
+				loginModal.onOpen()
+			})
+			.catch(() => toast.error('Something went wrong'))
 			.finally(() => setIsLoading(false))
 	}
 
