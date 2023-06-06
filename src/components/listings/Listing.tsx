@@ -60,7 +60,7 @@ const Listing: FC<ListingProps> = ({ listing, currentUser, reservations = [] }) 
 		}).then(() => {
 			toast.success('Reserved')
 			setDateRange(initialDateRange)
-			router.refresh()
+			router.push('/trips')
 		}).catch(() => toast.error('Something went wrong')).finally(() => setIsLoading(false))
 	}, [totalPrice, dateRange, listing?.id, router, currentUser, loginModal])
 
