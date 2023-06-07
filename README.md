@@ -1,3 +1,27 @@
+Fullstack Airbnb clone made with new Next 13.
+
+Stack: 
+ - Typescript
+ - Next 13
+ - NextAuth.js / Auth.js
+ - Zustand
+ - TailwindCSS
+ - Prisma
+ - MongoDB
+
+Also used: axios, bcrypt, date-fns, leaflet, qs, cloudinary, react-select
+
+To start project locally provide `.env` file with following variables: 
+ - DATABASE_URL=''
+ - NEXTAUTH_SECRET=''
+ - GOOGLE_CLIENT_ID=''
+ - GOOGLE_CLIENT_SECRET=''
+ - GITHUB_ID=''
+ - GITHUB_SECRET=''
+ - NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=''
+
+<hr/>
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
