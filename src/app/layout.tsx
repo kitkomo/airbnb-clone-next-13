@@ -6,16 +6,17 @@ import Navbar from '@/components/Navbar/Navbar'
 import LoginModal from '@/components/modals/LoginModal'
 import RegisterModal from '@/components/modals/RegisterModal'
 import RentModal from '@/components/modals/RentModal'
+import SearchModal from '@/components/modals/SearchModal'
 
 import '@/assets/styles/globals.css'
 
 import getCurrentUser from '@/actions/getCurrentUser'
 import ToasterProvider from '@/providers/ToasterProvider'
-import SearchModal from '@/components/modals/SearchModal'
 
 export const metadata: Metadata = {
 	title: 'Airbnb',
-	description: 'Airbnb clone'
+	description:
+		'Find the perfect place to stay at an amazing price in 191 countries. Belong anywhere with Airbnb.'
 }
 
 const font = Nunito({
@@ -27,6 +28,9 @@ const layout = async ({ children }: { children: ReactNode }) => {
 
 	return (
 		<html lang="en">
+			<head>
+				<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+			</head>
 			<body className={font.className}>
 				<ToasterProvider />
 				<LoginModal />
