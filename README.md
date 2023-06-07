@@ -8,7 +8,6 @@ Stack:
  - TailwindCSS
  - Prisma
  - MongoDB
-
 Also used: axios, bcrypt, date-fns, leaflet, qs, cloudinary, react-select
 
 To start project locally provide `.env` file with following variables: 
