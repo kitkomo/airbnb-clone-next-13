@@ -32,12 +32,12 @@ const layout = async ({ children }: { children: ReactNode }) => {
 				<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 			</head>
 			<body className={font.className}>
+				<Navbar currentUser={currentUser} />
 				<ToasterProvider />
 				<LoginModal />
 				<RegisterModal />
 				<RentModal />
 				<SearchModal />
-				<Navbar currentUser={currentUser} />
 				<div className="pb-20 pt-28">{children}</div>
 			</body>
 		</html>
